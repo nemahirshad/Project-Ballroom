@@ -84,3 +84,11 @@ Pause provides Resume, Restart Level, Main Menu, and volume. Restarting or leavi
 Victory displays a brief heart animation and one confetti burst. Completion time includes running gameplay only; damage taken counts actual health lost. Successful level exits commit their statistics, retry replaces the current level's results, and Play Again starts a fresh run. Results can be hidden in Settings.
 
 Verification in Unity 2019.4.9f1: 45 menu control/presentation checks and 154 full gameplay checks passed, including native button callbacks, menu navigation, settings persistence, pause timing, confirmation/cancel/restart, victory celebrations, real run statistics, replay, projectile collisions, safe house spawning, and physical progression through all three levels. 1920x1080 captures were checked for text fit and visual layout.
+
+## House reveal and arena decoration
+
+Collecting the key reveals the house with a 0.85-second rise/scale animation and a fading gold-to-pink welcome halo. Visual mesh copies animate independently while the original house collider remains at its safe final position. The original renderers return at the end of the reveal. Door entry waits for completion; trigger-stay handling lets a player already waiting at the entrance proceed automatically. The reveal pauses with gameplay.
+
+Each arena has four decorative speakers with cones and neon pedestals, five rear light columns, and a subtle back rail. All decoration stays outside the playable floor, has no active colliders, and leaves the original camera angle and field of view intact.
+
+Unity 2019.4.9f1: 172 checks passed, covering nonblocking decoration, reveal timing, safe house spawning, early-entry protection, physical door transitions, projectile collisions, key collection, hearts, real run statistics, and all three levels. 1920x1080 previews were inspected.

@@ -22,7 +22,7 @@ public class Key : MonoBehaviour {
  }
  void Update(){if(!dropped || collected)return;if(pivot!=null){pivot.localPosition=resting+Vector3.up*(Mathf.Sin(Time.time*2.4f)*.045f);pivot.Rotate(Vector3.up,Time.deltaTime*35,Space.World);}if(label!=null){label.transform.position=VisualBounds.center+Vector3.up*.7f;var camera=Camera.main;if(camera!=null)label.transform.rotation=camera.transform.rotation;}}
  public void MarkCollected(){collected=true;}
- public void Spawn(){if(spawned)return;spawned=true;ClearSpawnSpace();if(house!=null)house.SetActive(true);if(boy!=null)boy.SetActive(true);}
+ public void Spawn(){if(spawned)return;spawned=true;ClearSpawnSpace();if(house!=null){house.SetActive(true);BallroomHouseReveal.Play(house);}if(boy!=null)boy.SetActive(true);}
  // A disabled house has no useful Collider.bounds. Calculate its future footprint
  // before activation so the physics solver never traps or ejects the player.
  static Bounds BoxBounds(BoxCollider box){Vector3 center=box.transform.TransformPoint(box.center);var matrix=box.transform.localToWorldMatrix;Vector3 half=box.size*.5f;Vector3 x=matrix.MultiplyVector(Vector3.right*half.x),y=matrix.MultiplyVector(Vector3.up*half.y),z=matrix.MultiplyVector(Vector3.forward*half.z);return new Bounds(center,new Vector3(Mathf.Abs(x.x)+Mathf.Abs(y.x)+Mathf.Abs(z.x),Mathf.Abs(x.y)+Mathf.Abs(y.y)+Mathf.Abs(z.y),Mathf.Abs(x.z)+Mathf.Abs(y.z)+Mathf.Abs(z.z))*2);}

@@ -7,7 +7,7 @@ public class BallroomArena : MonoBehaviour {
  floorMaterial=new Material(Shader.Find("Standard"));floorMaterial.name="Ballroom stage fascia";floorMaterial.color=new Color(.065f,.075f,.13f);floorMaterial.SetFloat("_Glossiness",.3f);floorMaterial.SetFloat("_Metallic",.2f);ground.material=floorMaterial;DanceFloor();
  float y=floor.max.y+.015f;
  Strip(new Vector3(floor.min.x+.15f,y,floor.center.z),new Vector3(.12f,.025f,floor.size.z-.3f),new Color(1,.2f,.6f));Strip(new Vector3(floor.max.x-.15f,y,floor.center.z),new Vector3(.12f,.025f,floor.size.z-.3f),new Color(.2f,.7f,1));Strip(new Vector3(floor.center.x,y,floor.min.z+.15f),new Vector3(floor.size.x-.3f,.025f,.12f),new Color(.5f,.4f,.75f));Strip(new Vector3(floor.center.x,y,floor.max.z-.15f),new Vector3(floor.size.x-.3f,.025f,.12f),new Color(.5f,.4f,.75f));
- view.gameObject.tag="MainCamera";Fit();}
+ var decor=new GameObject("Ballroom arena decor");decor.transform.SetParent(transform,false);decor.AddComponent<BallroomArenaDecor>().Initialize(floor);view.gameObject.tag="MainCamera";Fit();}
  void DanceFloor(){
   var vertices=new System.Collections.Generic.List<Vector3>();var triangles=new[]{new System.Collections.Generic.List<int>(),new System.Collections.Generic.List<int>()};int row=0;
   for(float x=floor.min.x+.3f;x<floor.max.x-.3f;x+=2,row++){int column=0;for(float z=floor.min.z+.3f;z<floor.max.z-.3f;z+=2,column++){float right=Mathf.Min(x+2,floor.max.x-.3f),far=Mathf.Min(z+2,floor.max.z-.3f),y=floor.max.y+.006f;int n=vertices.Count;vertices.AddRange(new[]{new Vector3(x,y,z),new Vector3(x,y,far),new Vector3(right,y,far),new Vector3(right,y,z)});triangles[(row+column)%2].AddRange(new[]{n,n+1,n+2,n,n+2,n+3});}}
