@@ -1,72 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class EnemyInfo : MonoBehaviour
-{
-    public GameObject key;
-
-    public Enemies parent;
-
-    public int maxHealth;
-    public int damage;
-    public int chasers;
-
-    public bool hasKey;
-    public bool isChaser;
-    public bool allDead;
-
-    int health;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        health = maxHealth;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (parent.enemies.Count <= chasers)
-        {
-            allDead = true;
-        }
-
-        if (health <= 0)
-        {
-            if (hasKey)
-            {
-                key.SetActive(true);
-                key.transform.position = transform.position;
-            }
-            else
-            {
-                parent.enemies.Remove(this);
-            }
-            Destroy(gameObject);
-        }
-    }
-
-    public void TakeDamage(int value)
-    {
-        if (isChaser)
-        {
-            if (allDead)
-            {
-                health -= value;
-            }
-        }
-        else
-        {
-            health -= value;
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.gameObject.GetComponent<PlayerInfo>().TakeDamage(damage);
-        }
-    }
+public class EnemyInfo : MonoBehaviour {
+ public GameObject key; public Enemies parent;public int maxHealth=2,damage=1,chasers;public bool hasKey,isChaser,allDead;
+ public int Health { get; private set; } public bool IsDead { get; private set; }
+ public bool Protected { get { return isChaser && parent!=null && parent.TurretsRemaining>0; } }
+ BallroomFeedback feedback;
+ void Awake(){Health=Mathf.Max(1,maxHealth);feedback=gameObject.AddComponent<BallroomFeedback>();}
+ void Update(){if(feedback!=null)feedback.SetShield(Protected);}
+ public void TakeDamage(int value){if(value<=0 || IsDead || BallroomGame.Blocked)return;if(Protected){feedback.Flash(new Color(.35f,.8f,1));BallroomAudio.Cue(BallroomAudio.Sound.Shield);return;}Health=Mathf.Max(0,Health-value);feedback.Flash(Color.white);BallroomAudio.Cue(BallroomAudio.Sound.Hit);if(Health==0)Die();}
+ void Die(){if(IsDead)return;IsDead=true;if(parent!=null)parent.RemoveEnemy(this,transform.position);else if(hasKey && key!=null){key.transform.position=transform.position;key.SetActive(true);}foreach(var c in GetComponentsInChildren<Collider>())c.enabled=false;BallroomFeedback.Burst(transform.position,new Color(1,.3f,.55f));Destroy(gameObject);}
+ void OnCollisionEnter(Collision collision){if(IsDead || BallroomGame.Blocked)return;var p=collision.collider.GetComponentInParent<PlayerInfo>();if(p!=null)p.TakeDamage(damage);}
 }

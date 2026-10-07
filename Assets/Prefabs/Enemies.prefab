@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bb68c9d69a6b93478882ad8a2f48b9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   enemies:
   - {fileID: 8729034773472906192}
   - {fileID: 2822632035789932188}
@@ -162,6 +162,16 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2138723752686015762, guid: 9dcd02676aa225a449a58d4c5b47b924,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value:
+      objectReference: {fileID: 2100000, guid: c5b325df025e7914fb544550f917c318, type: 2}
+    - target: {fileID: 3209940406660329862, guid: 9dcd02676aa225a449a58d4c5b47b924,
+        type: 3}
+      propertyPath: m_Mesh
+      value:
+      objectReference: {fileID: 4300000, guid: 37c90806c503cb940b93a695096b8b4c, type: 2}
     - target: {fileID: 6777849274790885041, guid: 9dcd02676aa225a449a58d4c5b47b924,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -200,8 +210,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3b10695a9f5e18468094170527e1839, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!1001 &3608513638549868054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -309,6 +319,16 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2138723752686015762, guid: 9dcd02676aa225a449a58d4c5b47b924,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value:
+      objectReference: {fileID: 2100000, guid: c5b325df025e7914fb544550f917c318, type: 2}
+    - target: {fileID: 3209940406660329862, guid: 9dcd02676aa225a449a58d4c5b47b924,
+        type: 3}
+      propertyPath: m_Mesh
+      value:
+      objectReference: {fileID: 4300000, guid: 37c90806c503cb940b93a695096b8b4c, type: 2}
     - target: {fileID: 6777849274790885041, guid: 9dcd02676aa225a449a58d4c5b47b924,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -347,8 +367,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3b10695a9f5e18468094170527e1839, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!1001 &3608513638721452968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -456,6 +476,16 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2138723752686015762, guid: 9dcd02676aa225a449a58d4c5b47b924,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value:
+      objectReference: {fileID: 2100000, guid: c5b325df025e7914fb544550f917c318, type: 2}
+    - target: {fileID: 3209940406660329862, guid: 9dcd02676aa225a449a58d4c5b47b924,
+        type: 3}
+      propertyPath: m_Mesh
+      value:
+      objectReference: {fileID: 4300000, guid: 37c90806c503cb940b93a695096b8b4c, type: 2}
     - target: {fileID: 6777849274790885041, guid: 9dcd02676aa225a449a58d4c5b47b924,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -499,8 +529,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3b10695a9f5e18468094170527e1839, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!1001 &4416031399425048142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -571,7 +601,7 @@ PrefabInstance:
     - target: {fileID: 486753163648827531, guid: 6072edfec95a15c48a95b45a98a150e0,
         type: 3}
       propertyPath: player
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 692897162257135284, guid: 6072edfec95a15c48a95b45a98a150e0,
         type: 3}
@@ -596,8 +626,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3b10695a9f5e18468094170527e1839, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!1001 &7790037719658526436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -705,6 +735,16 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2138723752686015762, guid: 9dcd02676aa225a449a58d4c5b47b924,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value:
+      objectReference: {fileID: 2100000, guid: c5b325df025e7914fb544550f917c318, type: 2}
+    - target: {fileID: 3209940406660329862, guid: 9dcd02676aa225a449a58d4c5b47b924,
+        type: 3}
+      propertyPath: m_Mesh
+      value:
+      objectReference: {fileID: 4300000, guid: 37c90806c503cb940b93a695096b8b4c, type: 2}
     - target: {fileID: 6777849274790885041, guid: 9dcd02676aa225a449a58d4c5b47b924,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -743,5 +783,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3b10695a9f5e18468094170527e1839, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
